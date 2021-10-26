@@ -126,3 +126,8 @@ textarea:focus, input:focus{
     text-align: center;
     margin-top: 15px;
 }
+
+#registrationForm,
+#loginForm{
+    display: none;
+}
