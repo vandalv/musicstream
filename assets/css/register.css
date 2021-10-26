@@ -1,0 +1,128 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    max-width: 100%;
+    box-sizing: border-box;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+body, html{
+    height: 100%;
+}
+
+#background {
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-image: url("../bg.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url(../fonts/RobotoSlab-Regular.ttf);
+    font-style: normal;
+    font-weight: 100;
+}
+
+#formContainer * {
+    color: #fff;
+    box-sizing:border-box;
+}
+
+#formContainer {
+    font-family: 'roboto';
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 2em;
+    width: 80%;
+    margin:0 auto;
+    position:relative;
+}
+
+#loginContainer{
+    width: 420px;
+    padding: 45px;
+    float: left;
+    border-right: 1px solid;
+    margin-top: 50px;
+}
+
+#loginContainer input[type="password"],
+#loginContainer input[type="text"]{
+    display: block;
+    background-color: transparent;
+    border: 0px;
+    padding: 2px 5px;
+    margin: 8px 0;
+    border-bottom: 2px solid;
+    height: 28px;
+    line-height: 20px;
+    font-size: 18px;
+    width: 100%;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+
+#loginContainer h2{
+    text-align: center;
+    color: black;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #fff;
+    background-color: transparent;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #fff;
+    opacity:  1;
+    background-color: transparent;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #fff;
+    opacity:  1;
+    background-color: transparent;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    #fff;
+    background-color: transparent;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+    color:    #fff;
+    background-color: transparent;
+}
+
+::placeholder { /* Most modern browsers support this now. */
+    color:    #fff;
+    background-color: transparent;
+}
+
+#loginContainer button {
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 250px;
+    display: block;
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin: 10px auto;
+    height: 41px;
+    width: 90%;
+    margin-top: 20px;
+}
+
+.switchForms span{
+    font-weight: bolder;
+    font-size: 13px;
+}
+
+.switchForms{
+    text-align: center;
+    margin-top: 15px;
+}
