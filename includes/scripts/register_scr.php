@@ -37,7 +37,6 @@ if($account->checkIfEmailExists($email) != 0){
 else{
     $account->addAccount($newUsername, $firstName, $secondName, $email, $registrationPWD);
     $_SESSION['userLoggedIn'] = $newUsername;
-    header('Location: index.php');
 }
 }
 ?>

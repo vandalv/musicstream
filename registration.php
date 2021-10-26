@@ -17,6 +17,20 @@ include("includes/config.php");
     <title>Mucic Stream</title>
 </head>
 <body>
+    <?php 
+    if(isset($_POST['registerBTN'])){
+        echo    '<script> $(document).ready(function(){
+                $("#loginForm").hide();
+                $("#registrationForm").show();
+                });</script>';
+    }
+    if(isset($_POST['logInBTN'])){
+        echo    '<script> $(document).ready(function(){
+                $("#loginForm").show();
+                $("#registrationForm").hide();
+                });</script>';
+    }
+    ?>
 <script src="assets/js/pageloader.js"></script>
     <div id="background">
         <div id="formContainer">
