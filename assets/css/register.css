@@ -155,3 +155,18 @@ textarea:focus, input:focus{
 ul{
     padding-left: 65px;
 }
+
+li{
+    padding: 5px;
+    list-style-type: square;
+}
+
+#basicInfo h1{
+    color: #D0FFB7;
+    font-size: 49px;
+    font-weight: bold;
+}
+
+#basicInfo h2{
+    margin: 8px;
+}

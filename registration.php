@@ -88,9 +88,9 @@ include("includes/config.php");
                 <h1>Inspiration is everything</h1><br>
                 <h2>Looking for free music?</h2><br>
                 <ul>
-                    <li>Discover new artists</li><br>
-                    <li>Save you favourite tracks to playlists</li><br>
-                    <li>Follow artists to get latest releses</li><br>
+                    <li>Discover new artists</li>
+                    <li>Save you favourite tracks to playlists</li>
+                    <li>Follow artists to get latest releses</li>
                 </ul>
             </div>
         </div>    
