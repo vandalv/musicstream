@@ -46,7 +46,7 @@ include("includes/config.php");
                     <label for="logInPWD">Password</label>
                     <input id="logInPWD" name="logInPWD" type="password" required>
                     <?php if($wronginput == true): ?> 
-                    <p>Wrong input.</p>
+                    <p id="errorReport"><?php echo ErrorMassages::$dataError?></p>
                     <?php endif; ?>
                     <button type="submit" name="logInBTN">Submit</button>
                     <div class="switchForms">

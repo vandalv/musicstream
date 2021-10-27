@@ -5,5 +5,6 @@ class ErrorMassages{
     public static $secondnameError = "Two to twelve characters, only letters, spaces and - , ` allowed";
     public static $emailError = "Your e-mail should be in format: Myemail123@example.com";
     public static $passwordError = "Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character";
+    public static $dataError = "Your Username or Password are invalid";
 }
 ?>

@@ -165,6 +165,7 @@ li{
     color: #D0FFB7;
     font-size: 49px;
     font-weight: bold;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.048), 1px -1px 0 rgba(0, 0, 0, 0.062), -1px 1px 0 rgba(0, 0, 0, 0.062), 1px 1px 0 rgba(0, 0, 0, 0.055);
 }
 
 #basicInfo h2{
@@ -174,4 +175,12 @@ li{
 #basicInfo li{
     background: url("../icons/checkmark.png") no-repeat;
     padding: 0px 40px;
+}
+
+#errorReport{
+    color: #F43D6B;
+    margin: 5px;
+    font-size: 14px;
+    padding: 5px;
+;
 }
