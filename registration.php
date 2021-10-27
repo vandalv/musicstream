@@ -18,6 +18,10 @@ include("includes/config.php");
 </head>
 <body>
     <?php 
+    echo    '<script> $(document).ready(function(){
+        $("#loginForm").hide();
+        $("#registrationForm").show();
+        });</script>';
     if(isset($_POST['registerBTN'])){
         echo    '<script> $(document).ready(function(){
                 $("#loginForm").hide();
@@ -31,7 +35,6 @@ include("includes/config.php");
                 });</script>';
     }
     ?>
-<script src="assets/js/pageloader.js"></script>
     <div id="background">
         <div id="formContainer">
             <div id="loginContainer">
