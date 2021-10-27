@@ -120,6 +120,16 @@ textarea:focus, input:focus{
 .switchForms span{
     font-weight: bolder;
     font-size: 13px;
+    -webkit-transition: color 2s;
+    transition: color 2s;
+}
+
+#hideRegistration:hover {
+    color: #000000e5;
+}
+
+#hideLogin:hover {
+    color: #000000e5;
 }
 
 .switchForms{
@@ -130,4 +140,18 @@ textarea:focus, input:focus{
 #registrationForm,
 #loginForm{
     display: none;
+}
+
+#basicInfo{
+    right: 300px;
+    font-size: 25px;
+    display: inline-block;
+    width: 640px;
+    height: 300px;
+    margin-top: 170px;
+    padding-left: 45px;
+}
+
+ul{
+    padding-left: 65px;
 }

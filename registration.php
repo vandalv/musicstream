@@ -84,6 +84,15 @@ include("includes/config.php");
                     </div> 
                 </form>
             </div>
+            <div id="basicInfo">
+                <h1>Inspiration is everything</h1><br>
+                <h2>Looking for free music?</h2><br>
+                <ul>
+                    <li>Discover new artists</li><br>
+                    <li>Save you favourite tracks to playlists</li><br>
+                    <li>Follow artists to get latest releses</li><br>
+                </ul>
+            </div>
         </div>    
     </div>
 </body>
