@@ -19,6 +19,18 @@ else{
     <title>Mucic Stream</title>
 </head>
 <body>
-    <div id="playerBar"></div>
+    <div id="playerBarContainer">
+        <div id="playerBar">
+        <div id="leftPB"></div>
+        <div id="centerPB">
+            <div class="content playerControls">
+                <div class="btns">
+                    <button><img src="assets/icons/shuffle.png"></button>
+                </div>
+            </div>
+        </div>
+        <div id="rightPB"></div>
+        </div>
+    </div>
 </body>
 </html>
