@@ -16,6 +16,10 @@ html, body{
     font-weight: bold;
 }
 
+a{
+    text-decoration: none;
+}
+
 #playerBarContainer{
     background-color: #000000e6;
     width: 100%;
@@ -162,13 +166,55 @@ html, body{
     margin-top: 105px;
     width: 170px;
     padding-left: 30px;
+    padding-bottom: 15px;
 }
 
 .navBar{
     display: flex;
     flex-direction: column;
     -ms-flex-direction: column;
+    position: relative;
 }
+
+.group{
+    padding: 10px 0;
+    padding-left: 45px;
+    
+}
+
+.navItem{
+    padding: 7px;
+    font-size: 14px;
+    font-weight: 700;
+    display: block;
+    letter-spacing: 1px;
+    
+}
+
+.icon{
+    position: absolute;
+    width: 25px;
+    margin-top: -3px;
+    margin-left: 80px;
+
+}
+
+.navBar .group{
+    position: relative;
+    border-top: 1px solid white;
+    margin: 0 15px;
+    padding: 10px 10px;
+}
+
+.navItemLink{
+    color: white;
+    transition: color 1s;
+}
+
+.navItemLink:hover{
+    color: #D0FFB7;
+}
+
 
 
 
