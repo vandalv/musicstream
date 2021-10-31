@@ -16,6 +16,12 @@ html, body{
     font-weight: bold;
 }
 
+body{
+    background-color: #191919;
+    font-size: 14px;
+    min-width: 720px;
+}
+
 a{
     text-decoration: none;
 }
@@ -215,6 +221,19 @@ a{
     color: #D0FFB7;
 }
 
+#mainViewContainer{
+    margin-left: 220px;
+    padding-bottom: 90px;
+    width: calc(100% - 220px);
+}
+
+#pageContent{
+    padding: 0 20px;
+}
+
+.gridContainer{
+    color: white;
+}
 
 
 
