@@ -24,6 +24,7 @@ body{
 
 a{
     text-decoration: none;
+    color: white;
 }
 
 #playerBarContainer{
@@ -235,6 +236,48 @@ a{
     color: white;
 }
 
+.pageRec{
+    padding: 15px;
+    text-align: center;
+    color:white;
+}
+
+.itemViewer{
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 35px;
+    margin-bottom: 20px;
+    width: 29%;
+    max-width: 270px;
+    min-width: 150px;
+}
+
+.itemViewer img{
+    width: 100%;
+    border-radius: 5%;
+    border: 2px solid #404040;
+    transition: 1s;
+
+}
+
+.itemViewer img:hover{
+    border: 2px solid white;
+
+}
+
+.infoViewer{
+    font-weight: 500;
+    text-align: center;
+    padding: 5px 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    transition: 1s;
+}
+
+.infoViewer a{
+    color:white;
+    text-decoration: none;
+}
 
 
 
