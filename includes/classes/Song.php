@@ -29,11 +29,11 @@ class Song{
     }
 
     function getArtist(){
-        return new Artist($this->dbconnect, $this->id);
+        return new Artist($this->dbconnect, $this->artistId);
     }
 
     function getAlbum(){
-        return new Album($this->dbconnect, $this->id);
+        return new Album($this->dbconnect, $this->albumId);
     }
 
     function getGenre(){
