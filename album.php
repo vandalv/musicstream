@@ -24,8 +24,21 @@ $album = new Album($dbconnect, $idAlbum);
     <ul class="trackList">
         <?php 
         $songIdArray = $album->getSongId();
+        $i = 1;
         foreach($songIdArray as $idSong){
-            echo $idSong . "<br>";
+            $song = new Song($dbconnect, $idSong);
+            $albumArtist = $song->getArtist();
+            echo "<li class='tracklistRow'>
+                <div class='trackCount'>
+                    <img class='play' src='assets/icons/play-white.png'>
+                    <span class='trackNumber'>$i</span>
+                </div>
+                <div class='trackInformation>
+                    <span class='trackName'>" . $song->getTitle() . "</span>
+                    <span class='artistName'>" . $albumArtist->getName() . "</span>
+                </div>
+                </li>";
+                $i = $i + 1;
         }
         ?>
     </ul>

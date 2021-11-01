@@ -17,8 +17,8 @@ class Song{
         $q = mysqli_query($this->dbconnect, "SELECT * FROM songs WHERE id='$this->id'");
         $this->data = mysqli_fetch_array($q);
         $this->title = $this->data['title'];
-        $this->artistId = $this->data['artistId'];
-        $this->albumId = $this->data['albumId'];
+        $this->artistId = $this->data['artist'];
+        $this->albumId = $this->data['album'];
         $this->genre = $this->data['genre'];
         $this->duration = $this->data['duration'];
         $this->path = $this->data['path'];
