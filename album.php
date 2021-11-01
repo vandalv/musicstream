@@ -20,4 +20,14 @@ $album = new Album($dbconnect, $idAlbum);
         <p>Number Of Tracks:<?php echo $album -> numberOfSongs();?></p>
     </div>
 </div>
+<div class="trackContainer">
+    <ul class="trackList">
+        <?php 
+        $songIdArray = $album->getSongId();
+        foreach($songIdArray as $idSong){
+            echo $idSong . "<br>";
+        }
+        ?>
+    </ul>
+</div>
 <?php include("includes/footer.php")?>
