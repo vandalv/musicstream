@@ -7,9 +7,17 @@ else{
     header("Location: index.php");
 }
 
-$albumQuery = mysqli_query($dbconnect, "SELECT * FROM albums WHERE id='$idAlbum'");
-$album = mysqli_fetch_array($albumQuery);
-$artist = new Artist($dbconnect, $album['artist']);
-echo $artist->getName();
+$album = new Album($dbconnect, $idAlbum);
+
 ?>
+<div class="albumInfoHead">
+    <div class="leftSide">
+        <img src="<?php echo $album-> artworkPath();?>">
+    </div>
+    <div class="rightSide">
+        <h2><?php echo $album -> getTitle();?></h2>
+        <h2 id="beGreen">by <?php echo $album -> getArtist() -> getName();?></h2>
+        <p>Number Of Tracks:<?php echo $album -> numberOfSongs();?></p>
+    </div>
+</div>
 <?php include("includes/footer.php")?>

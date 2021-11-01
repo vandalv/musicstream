@@ -1,8 +1,5 @@
 <?php
-
-use Artist as GlobalArtist;
-
-class Artist{
+class Album{
     private $dbconnect;
     private $id;
     private $title;
@@ -37,6 +34,11 @@ class Artist{
 
     public function artworkPath(){
         return $this->artworkPath;
+    }
+
+    public function numberOfSongs(){
+        $q = mysqli_query($this->dbconnect, "SELECT * FROM songs WHERE album='$this->id'");
+        return mysqli_num_rows($q);
     }
 }
 ?>
