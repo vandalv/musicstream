@@ -25,8 +25,8 @@ $jsonArray = json_encode($resultArray);
             let album = JSON.parse(data);
             $(".albumCover img").attr("src", album.artworkPath);
             });
-            audioElement.setTrack(track.path);
-            audioElement.play();
+            audioElement.setTrack(track);
+            playSong();
         });
         if(play){
             audioElement.play();
@@ -34,6 +34,12 @@ $jsonArray = json_encode($resultArray);
     }
 
     function playSong(){
+        if(audioElement.audio.currentTime == 0){
+            $.post("includes/ajax/playCount.php", {songId: trackId});
+        }
+        else{
+            console.log("dont update");
+        }
             $(".controlButton.play").hide();
             $(".controlButton.pause").show();
             audioElement.play();
