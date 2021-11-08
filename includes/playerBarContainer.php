@@ -16,7 +16,15 @@ $jsonArray = json_encode($resultArray);
     function setTrack(trackId, newPlayList, play){
         $.post("includes/ajax/getSong_json.php", {songId: trackId}, function(data){
             let track = JSON.parse(data);
-            console.log(track);
+            $(".track span").text(track.title);
+            $.post("includes/ajax/getArtist_json.php", {artistId: track.artist}, function(data){
+            let artist = JSON.parse(data);
+            $(".artist span").text(artist.name);
+            });
+            $.post("includes/ajax/getAlbum_json.php", {albumId: track.album}, function(data){
+            let album = JSON.parse(data);
+            $(".albumCover img").attr("src", album.artworkPath);
+            });
             audioElement.setTrack(track.path);
             audioElement.play();
         });
@@ -42,14 +50,14 @@ $jsonArray = json_encode($resultArray);
     <div id="leftPB">
         <div class="content">
             <span class="albumCover">
-                <img src="assets\albumCovers\folk_genre_cover.jpg" class="albumArtwork">
+                <img src="" class="albumArtwork">
             </span>
             <div class="trackInfo">
                 <span class="artist">
-                    <span>Paper Planes</span>
+                    <span></span>
                 </span>
                 <span class="track">
-                    <span>The Best Thing</span>
+                    <span></span>
                 </span>
             </div>
         </div>
