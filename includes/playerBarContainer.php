@@ -14,7 +14,12 @@ $jsonArray = json_encode($resultArray);
     });
 
     function setTrack(trackId, newPlayList, play){
-        audioElement.setTrack("assets/musicFiles/bensound-happyrock.mp3");
+        $.post("includes/ajax/getSong_json.php", {songId: trackId}, function(data){
+            let track = JSON.parse(data);
+            console.log(track);
+            audioElement.setTrack(track.path);
+            audioElement.play();
+        });
         if(play){
             audioElement.play();
         }
