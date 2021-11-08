@@ -10,11 +10,26 @@ $jsonArray = json_encode($resultArray);
     $(document).ready(function(){
         currentPlaylist = <?php echo $jsonArray; ?>;
         audioElement = new Audio();
+        setTrack(currentPlaylist[0], currentPlaylist, false);
     });
 
     function setTrack(trackId, newPlayList, play){
-
+        audioElement.setTrack("assets/musicFiles/bensound-happyrock.mp3");
+        if(play){
+            audioElement.play();
+        }
     }
+
+    function playSong(){
+            $(".controlButton.play").hide();
+            $(".controlButton.pause").show();
+            audioElement.play();
+        }
+        function pauseSong(){
+            $(".controlButton.pause").hide();
+            $(".controlButton.play").show();
+            audioElement.pause();
+        }
 </script>
 
 <div id="playerBarContainer">
@@ -39,8 +54,8 @@ $jsonArray = json_encode($resultArray);
             <div class="btns">
                 <button class="controlButton shuffle"><img src="assets/icons/shuffle.png" alt="shuffle"></button>
                 <button class="controlButton previous"><img src="assets/icons/previous.png" alt="previous"></button>
-                <button class="controlButton play"><img src="assets/icons/play.png" alt="play"></button>
-                <button class="controlButton pause" style="display:none"><img src="assets/icons/pause.png" alt="pause"></button>
+                <button class="controlButton play" onclick="playSong()"><img src="assets/icons/play.png" alt="play"></button>
+                <button class="controlButton pause" style="display:none" onclick="pauseSong()"><img src="assets/icons/pause.png" alt="pause"></button>
                 <button class="controlButton next"><img src="assets/icons/next.png" alt="next"></button>
                 <button class="controlButton repeat"><img src="assets/icons/repeat.png" alt="repeat"></button>
             </div>
