@@ -20,6 +20,11 @@ function updateTime(audio){
     $(".progressTime.remaining").text(formatTime(audio.duration - audio.currentTime));
     let progress = audio.currentTime / audio.duration * 100;
     $(".playbackBar .timeBarProgress").css("width", progress + "%");
+}
+
+function updateVolume(audio){
+    let volume = audio.volume * 100;
+    $(".volumeBar .timeBarProgress").css("width", volume + "%");
 
 }
 
@@ -34,6 +39,10 @@ function Audio(){
         if(this.duration){
             updateTime(this);
         }
+    });
+
+    this.audio.addEventListener("volumechange", function(){
+            updateVolume(this);
     });
 
     this.setTrack = function(track){
