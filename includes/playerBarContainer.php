@@ -1,7 +1,6 @@
 <?php
 $songQuery = mysqli_query($dbconnect, "SELECT id FROM songs ORDER BY RAND() LIMIT 10");
 $resultArray = array();
-$mouseEvent = false;
 while($row = mysqli_fetch_array($songQuery)) {
 	array_push($resultArray, $row['id']);
 }
@@ -12,13 +11,27 @@ $jsonArray = json_encode($resultArray);
         currentPlaylist = <?php echo $jsonArray; ?>;
         audioElement = new Audio();
         setTrack(currentPlaylist[0], currentPlaylist, false);
-        $(".playbackBar .timeBarProgress").mousedown(function(){
-            $mouseEvent = true;
+        $(".playbackBar .timeBar").mousedown(function(){
+            mouseEvent = true;
         });
-        $(".playbackBar .timeBarProgress").mousemove(function(){
-            $mouseEvent = true;
+        $(".playbackBar .timeBar").mousemove(function(e){
+            if(mouseEvent){
+                mouseGetTime(e, this);
+            }
+        });
+        $(".playbackBar .timeBar").mouseup(function(e){
+            mouseGetTime(e, this);
+        });
+        $(document).mouseup(function(){
+            mouseEvent = false;
         });
     });
+
+    function mouseGetTime(mouse, timeBar){
+        let percent = mouse.offsetX / $(timeBar).width() * 100;
+        let seconds = audioElement.audio.duration * (percent / 100);
+        audioElement.setTime(seconds);
+    }
 
     function setTrack(trackId, newPlayList, play){
         $.post("includes/ajax/getSong_json.php", {songId: trackId}, function(data){

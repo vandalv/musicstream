@@ -1,5 +1,6 @@
 let currentPlaylist = new Array();
 let audioElement;
+let mouseEvent = false;
 
 function formatTime(param){
     let time = Math.round(param);
@@ -46,5 +47,10 @@ function Audio(){
 
     this.pause = function(){
         this.audio.pause();
+    }
+
+    this.setTime = function(seconds){
+        console.log(seconds);
+        this.audio.currentTime = seconds;
     }
 }
