@@ -18,7 +18,7 @@ function updateTime(audio){
     $(".progressTime.current").text(formatTime(audio.currentTime));
     $(".progressTime.remaining").text(formatTime(audio.duration - audio.currentTime));
     let progress = audio.currentTime / audio.duration * 100;
-    $(".timeBarProgress").css("width", progress + "%");
+    $(".playbackBar .timeBarProgress").css("width", progress + "%");
 
 }
 
