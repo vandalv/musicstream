@@ -79,7 +79,7 @@ $jsonArray = json_encode($resultArray);
                 <button class="controlButton repeat"><img src="assets/icons/repeat.png" alt="repeat"></button>
             </div>
             <div class="playbackBar">
-            <span class="progressTime current"></span>
+            <span class="progressTime current">0:00</span>
             <div class="timeBar">
                 <div class="timeBarBG">
                     <div class="timeBarProgress"></div>
