@@ -35,7 +35,7 @@ $jsonArray = json_encode($resultArray);
 
     function playSong(){
         if(audioElement.audio.currentTime == 0){
-            $.post("includes/ajax/playCount.php", {songId: trackId});
+            $.post("includes/ajax/playCount.php", {songId: audioElement.currentlyPlaying.id});
         }
         else{
             console.log("dont update");
@@ -79,13 +79,13 @@ $jsonArray = json_encode($resultArray);
                 <button class="controlButton repeat"><img src="assets/icons/repeat.png" alt="repeat"></button>
             </div>
             <div class="playbackBar">
-            <span class="progressTime current">0.00</span>
+            <span class="progressTime current"></span>
             <div class="timeBar">
                 <div class="timeBarBG">
                     <div class="timeBarProgress"></div>
                 </div>
             </div>
-            <span class="progressTime remaining">0.00</span>
+            <span class="progressTime remaining"></span>
             </div>
         </div>
     </div>
