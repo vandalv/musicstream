@@ -12,6 +12,10 @@ $jsonArray = json_encode($resultArray);
         audioElement = new Audio();
         setTrack(currentPlaylist[0], currentPlaylist, false);
         updateVolume(audioElement.audio);
+        console.log(audioElement.audio);
+        $("#playerBarContainer").on("mousedown touchstart mousemove touchmove", function(e){
+            e.preventDefault();
+        });
         $(".playbackBar .timeBar").mousedown(function(){
             mouseEvent = true;
         });
