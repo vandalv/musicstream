@@ -24,6 +24,10 @@ class Song{
         $this->path = $this->data['path'];
     }
 
+    function getId(){
+        return $this->id;
+    }
+
     function getTitle(){
         return $this->title;
     }

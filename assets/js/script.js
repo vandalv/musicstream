@@ -1,5 +1,6 @@
 let currentPlaylist = new Array();
 let shufflePlaylist = new Array();
+let tempPlaylist = new Array();
 let audioElement;
 let mouseEvent = false;
 let currentIndex = 0;

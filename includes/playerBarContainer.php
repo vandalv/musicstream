@@ -8,9 +8,9 @@ $jsonArray = json_encode($resultArray);
 ?>
 <script>
     $(document).ready(function(){
-        currentPlaylist = <?php echo $jsonArray; ?>;
+        let newPlaylist = <?php echo $jsonArray; ?>;
         audioElement = new Audio();
-        setTrack(currentPlaylist[0], currentPlaylist, false);
+        setTrack(newPlaylist[0], newPlaylist, false);
         updateVolume(audioElement.audio);
         console.log(audioElement.audio);
         $("#playerBarContainer").on("mousedown touchstart mousemove touchmove", function(e){
@@ -85,7 +85,7 @@ $jsonArray = json_encode($resultArray);
         else{
             currentIndex = currentIndex + 1;
         }
-        let trackToPlay = currentPlaylist[currentIndex];
+        let trackToPlay = shuffle ? shufflePlaylist[currentIndex] : currentPlaylist[currentIndex];
         setTrack(trackToPlay,currentPlaylist,true);
     }
 
@@ -106,15 +106,37 @@ $jsonArray = json_encode($resultArray);
         let mName = shuffle ? "shuffle-active.png" : "shuffle.png";
         $(".controlButton.shuffle img").attr("src", "assets/icons/" + mName);
         if(shuffle){
-
+            shuffleArray(shufflePlaylist);
+            currentIndex = shufflePlaylist.indexOf(audioElement.currentlyPlaying.id);
         }
         else{
             
         }
     }
 
+    function shuffleArray(array) {
+    let currentIndex = array.length,  randomIndex;
+    while (currentIndex != 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+    }
+    return array;
+}
+
     function setTrack(trackId, newPlayList, play){
+        if(newPlayList != currentPlaylist){
+            currentPlaylist = newPlayList;
+            shufflePlaylist = currentPlaylist.slice();
+            shuffleArray(shufflePlaylist);
+        } 
+
+        if(shuffle){
+            currentIndex = shufflePlaylist.indexOf(trackId);
+        }
+        else{
             currentIndex = currentPlaylist.indexOf(trackId);
+        }
             pauseSong();
         $.post("includes/ajax/getSong_json.php", {songId: trackId}, function(data){
             let track = JSON.parse(data);
