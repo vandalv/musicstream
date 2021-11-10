@@ -62,6 +62,17 @@ $jsonArray = json_encode($resultArray);
         audioElement.setTime(seconds);
     }
 
+    function previousSong(){
+        if(audioElement.audio.currentTime >= 5 || currentIndex == 0){
+            audioElement.setTime(0);
+        }
+        else{
+            currentIndex = currentIndex - 1;
+            setTrack(currentPlaylist[currentIndex],currentPlaylist,true);
+        }
+        
+    }
+
     function nextSong(){
         if(repeat){
             audioElement.setTime(0);
@@ -82,6 +93,24 @@ $jsonArray = json_encode($resultArray);
         repeat = !repeat;
         let imName = repeat ? "repeat-active.png" : "repeat.png";
         $(".controlButton.repeat img").attr("src", "assets/icons/" + imName);
+    }
+
+    function mute(){
+        audioElement.audio.muted = !audioElement.audio.muted;
+        let mName = audioElement.audio.muted ? "volume-mute.png" : "volume.png";
+        $(".controlButton.volume img").attr("src", "assets/icons/" + mName);
+    }
+
+    function shuffleBtn(){
+        shuffle = !shuffle;
+        let mName = shuffle ? "shuffle-active.png" : "shuffle.png";
+        $(".controlButton.shuffle img").attr("src", "assets/icons/" + mName);
+        if(shuffle){
+
+        }
+        else{
+            
+        }
     }
 
     function setTrack(trackId, newPlayList, play){
@@ -144,8 +173,8 @@ $jsonArray = json_encode($resultArray);
     <div id="centerPB">
         <div class="content playerControls">
             <div class="btns">
-                <button class="controlButton shuffle"><img src="assets/icons/shuffle.png" alt="shuffle"></button>
-                <button class="controlButton previous"><img src="assets/icons/previous.png" alt="previous"></button>
+                <button class="controlButton shuffle" onclick="shuffleBtn()"><img src="assets/icons/shuffle.png" alt="shuffle"></button>
+                <button class="controlButton previous" onclick="previousSong()"><img src="assets/icons/previous.png" alt="previous"></button>
                 <button class="controlButton play" onclick="playSong()"><img src="assets/icons/play.png" alt="play"></button>
                 <button class="controlButton pause" style="display:none" onclick="pauseSong()"><img src="assets/icons/pause.png" alt="pause"></button>
                 <button class="controlButton next" onclick="nextSong()"><img src="assets/icons/next.png" alt="next"></button>
@@ -164,7 +193,7 @@ $jsonArray = json_encode($resultArray);
     </div>
     <div id="rightPB">
     <div class="volumeBar">
-                <button class="controlButton volume"><img src="assets/icons/volume.png" alt="volume"></button>
+                <button class="controlButton volume" onclick="mute()"><img src="assets/icons/volume.png" alt="volume"></button>
                 <div class="timeBar">
                 <div class="timeBarBG">
                     <div class="timeBarProgress"></div>
