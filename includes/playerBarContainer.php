@@ -63,6 +63,11 @@ $jsonArray = json_encode($resultArray);
     }
 
     function nextSong(){
+        if(repeat){
+            audioElement.setTime(0);
+            playSong();
+            return;
+        }
         if(currentIndex == currentPlaylist.length - 1){
             currentIndex = 0;
         }
@@ -73,9 +78,16 @@ $jsonArray = json_encode($resultArray);
         setTrack(trackToPlay,currentPlaylist,true);
     }
 
+    function setRepeat(){
+        repeat = !repeat;
+        let imName = repeat ? "repeat-active.png" : "repeat.png";
+        $(".controlButton.repeat img").attr("src", "assets/icons/" + imName);
+    }
+
     function setTrack(trackId, newPlayList, play){
-        $.post("includes/ajax/getSong_json.php", {songId: trackId}, function(data){
             currentIndex = currentPlaylist.indexOf(trackId);
+            pauseSong();
+        $.post("includes/ajax/getSong_json.php", {songId: trackId}, function(data){
             let track = JSON.parse(data);
             $(".track span").text(track.title);
             $.post("includes/ajax/getArtist_json.php", {artistId: track.artist}, function(data){
@@ -137,7 +149,7 @@ $jsonArray = json_encode($resultArray);
                 <button class="controlButton play" onclick="playSong()"><img src="assets/icons/play.png" alt="play"></button>
                 <button class="controlButton pause" style="display:none" onclick="pauseSong()"><img src="assets/icons/pause.png" alt="pause"></button>
                 <button class="controlButton next" onclick="nextSong()"><img src="assets/icons/next.png" alt="next"></button>
-                <button class="controlButton repeat"><img src="assets/icons/repeat.png" alt="repeat"></button>
+                <button class="controlButton repeat" onclick="setRepeat()"><img src="assets/icons/repeat.png" alt="repeat"></button>
             </div>
             <div class="playbackBar">
             <span class="progressTime current">0:00</span>

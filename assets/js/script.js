@@ -43,6 +43,10 @@ function Audio(){
         }
     });
 
+    this.audio.addEventListener("ended", function() {
+        nextSong();
+    });
+
     this.audio.addEventListener("volumechange", function(){
             updateVolume(this);
     });
