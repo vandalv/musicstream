@@ -20,13 +20,13 @@
         </div>
     </div>
 </div>
-<div class="trackContainer borderBottom">
+<div class="trackContainerd">
     <ul class="trackList">
         <?php 
         $songIdArray = $artist->getSongIds();
         $i = 1;
         foreach($songIdArray as $idSong){
-            if($i > 5){
+            if($i > 4){
                 break;
             }
             $song = new Song($dbconnect, $idSong);
@@ -55,4 +55,19 @@
             tempPlaylist = JSON.parse(tempSongs);
         </script>
     </ul>
+</div>
+<div class="gridContainerd">
+    <?php 
+        $albumQuery = mysqli_query($dbconnect, "SELECT * FROM albums WHERE artist='$idArtist'");
+        while($row = mysqli_fetch_array($albumQuery)){
+            echo "<div class='itemViewer'>
+            <span role='link' tabindex='0' onclick='openPage(\"album.php?id=" . $row['id'] . "\")'>
+                <img src='{$row['artworkPath']}'>              
+                <div class='infoViewer'>                  
+                    {$row['title']}              
+                </div> 
+            </span>
+            </div>";
+        }
+    ?>
 </div>

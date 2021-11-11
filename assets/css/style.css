@@ -394,6 +394,10 @@ a{
     text-align: center;
 }
 
+.trackContainer{
+    width: 1500px;
+}
+
 .button{
     color: #D0FFB7;
     background-color: transparent;
@@ -405,6 +409,30 @@ a{
     border-radius: 500px;
     padding: 6px;
     min-width: 130px;
+}
+
+.borderBottom{
+    border-bottom: 3px dotted;
+    color: #D0FFB7;
+    padding: 30px;
+    width: 1100px;
+}
+
+.trackContainerd{
+    width: 1155px;
+    height: 300px;
+    border-bottom: 3px dotted;
+    border-color: #D0FFB7;
+    margin-right: none;
+}
+
+.trackContainerd li{
+    width: 1120px;
+}
+
+.gridContainerd{
+    margin-top:30px;
+    color:white;
 }
 
 
