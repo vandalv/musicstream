@@ -29,7 +29,7 @@ $album = new Album($dbconnect, $idAlbum);
             $song = new Song($dbconnect, $idSong);
             echo "<li class='tracklistRow'>
                 <div class='trackCount'>
-                    <img class='play' src='assets/icons/play-white.png' onclick='setTrack(". $song->getId() .", tempPlaylist, true)'>
+                    <img class='play' src='assets/icons/play-white.png' onclick='setTrack(\"". $song->getId() ."\", tempPlaylist, true)'>
                     <span class='trackNumber'>$i</span>
                 </div>
                 <div class='trackInfo'>
@@ -48,7 +48,7 @@ $album = new Album($dbconnect, $idAlbum);
         }
         ?>
         <script>
-            let tempSongs = "<?php echo json_encode($songIdArray);?>";
+            let tempSongs = '<?php echo json_encode($songIdArray);?>';
             tempPlaylist = JSON.parse(tempSongs);
         </script>
     </ul>
