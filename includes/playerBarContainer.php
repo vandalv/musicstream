@@ -10,6 +10,7 @@ $jsonArray = json_encode($resultArray);
     $(document).ready(function(){
         let newPlaylist = <?php echo $jsonArray; ?>;
         audioElement = new Audio();
+        audioElement.audio.volume = 0.5;
         setTrack(newPlaylist[0], newPlaylist, false);
         updateVolume(audioElement.audio);
         console.log(audioElement.audio);
@@ -144,10 +145,12 @@ $jsonArray = json_encode($resultArray);
             $.post("includes/ajax/getArtist_json.php", {artistId: track.artist}, function(data){
             let artist = JSON.parse(data);
             $(".artist span").text(artist.name);
+            $(".artist span").attr("onclick", "openPage('artist.php?id=" + artist.id + "')");
             });
             $.post("includes/ajax/getAlbum_json.php", {albumId: track.album}, function(data){
             let album = JSON.parse(data);
             $(".albumCover img").attr("src", album.artworkPath);
+            $(".albumCover img").attr("onclick", "openPage('album.php?id=" + album.id + "')");
             });
             audioElement.setTrack(track);
             /// playSong(); /// IMPORTANT!!!
@@ -180,13 +183,13 @@ $jsonArray = json_encode($resultArray);
     <div id="leftPB">
         <div class="content">
             <span class="albumCover">
-                <img src="" class="albumArtwork">
+                <img src="" class="albumArtwork" role="link" tabindex="0">
             </span>
             <div class="trackInfo">
-                <span class="artist">
+                <span class="artist" role="link" tabindex="0">
                     <span></span>
                 </span>
-                <span class="track">
+                <span class="track" tabindex="0">
                     <span></span>
                 </span>
             </div>

@@ -32,6 +32,10 @@ function formatTime(param){
     return minutes + ":" + zero + seconds;
 }
 
+function playFirstSong(){
+    setTrack(tempPlaylist[0], tempPlaylist, true);
+}
+
 function updateTime(audio){
     $(".progressTime.current").text(formatTime(audio.currentTime));
     $(".progressTime.remaining").text(formatTime(audio.duration - audio.currentTime));
