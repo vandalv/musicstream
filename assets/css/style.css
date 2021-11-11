@@ -389,6 +389,24 @@ a{
     color: #D0FFB7;
 }
 
+.artistInfo{
+    font-size: 24;
+    text-align: center;
+}
+
+.button{
+    color: #D0FFB7;
+    background-color: transparent;
+    cursor: pointer;
+    /* font-weight: 20; */
+    letter-spacing: 1px;
+    font-size: 18;
+    border: 2px solid #D0FFB7;
+    border-radius: 500px;
+    padding: 6px;
+    min-width: 130px;
+}
+
 
 
 
