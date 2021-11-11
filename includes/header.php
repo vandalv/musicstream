@@ -6,8 +6,7 @@ include("includes/classes/Song.php");
 if(isset($_SESSION['userLoggedIn'])){
     $userLoggedIn = $_SESSION['userLoggedIn'];
     echo "<script>
-    let loggedUser = '$userLoggedIn';
-    alert(loggedUser);
+    loggedUser = '$userLoggedIn';
     </script>";
 }
 else{

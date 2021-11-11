@@ -6,6 +6,15 @@ let mouseEvent = false;
 let currentIndex = 0;
 let repeat = false;
 let shuffle = false;
+var loggedUser;
+
+function openPage(url){
+    if(url.indexOf("?") == -1){
+        url = url + "?";
+    }
+    var encodedUrl = encodeURI(url + "&loggedUser=" + loggedUser);
+    $("#pageContent").load(encodedUrl);
+}
 
 function formatTime(param){
     let time = Math.round(param);

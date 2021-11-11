@@ -1,5 +1,5 @@
 <?php 
-include("includes/header.php");
+include("includes/includedFiles.php");
 if(isset($_GET['id'])){
     $idAlbum =  $_GET['id'];
 }
@@ -53,4 +53,3 @@ $album = new Album($dbconnect, $idAlbum);
         </script>
     </ul>
 </div>
-<?php include("includes/footer.php")?>

@@ -150,11 +150,11 @@ $jsonArray = json_encode($resultArray);
             $(".albumCover img").attr("src", album.artworkPath);
             });
             audioElement.setTrack(track);
-            playSong();
+            /// playSong(); /// IMPORTANT!!!
+            if(play){
+                playSong();
+            }
         });
-        if(play){
-            audioElement.play();
-        }
     }
 
     function playSong(){
