@@ -17,7 +17,12 @@ $album = new Album($dbconnect, $idAlbum);
     <div class="rightSide">
         <h2><?php echo $album -> getTitle();?></h2>
         <h2 id="beGreen">by <?php echo $album -> getArtist() -> getName();?></h2>
-        <p>Number Of Tracks:<?php echo $album -> numberOfSongs();?></p>
+        <p>Number Of Tracks:
+            <?php 
+            str_repeat('&nbsp;', 1);
+            echo ' ' . $album->numberOfSongs();
+            ?>
+        </p>
     </div>
 </div>
 <div class="trackContainer">
