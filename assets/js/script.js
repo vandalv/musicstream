@@ -1,12 +1,13 @@
-let currentPlaylist = new Array();
-let shufflePlaylist = new Array();
-let tempPlaylist = new Array();
-let audioElement;
-let mouseEvent = false;
-let currentIndex = 0;
-let repeat = false;
-let shuffle = false;
+var currentPlaylist = new Array();
+var shufflePlaylist = new Array();
+var tempPlaylist = new Array();
+var audioElement;
+var mouseEvent = false;
+var currentIndex = 0;
+var repeat = false;
+var shuffle = false;
 var loggedUser;
+var tempSongs;
 
 function openPage(url){
     if(url.indexOf("?") == -1){
@@ -14,6 +15,8 @@ function openPage(url){
     }
     var encodedUrl = encodeURI(url + "&loggedUser=" + loggedUser);
     $("#pageContent").load(encodedUrl);
+    $("body").scrollTop(0);
+    history.pushState(null,null,url);
 }
 
 function formatTime(param){

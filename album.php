@@ -48,7 +48,7 @@ $album = new Album($dbconnect, $idAlbum);
         }
         ?>
         <script>
-            let tempSongs = '<?php echo json_encode($songIdArray);?>';
+            tempSongs = '<?php echo json_encode($songIdArray);?>';
             tempPlaylist = JSON.parse(tempSongs);
         </script>
     </ul>
