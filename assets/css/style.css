@@ -439,6 +439,42 @@ a{
     cursor: pointer;
 }
 
+.searchInput {
+    font-family: inherit;
+    width: 30%;
+    border: 0;
+    border-bottom: 2px solid gray;
+    outline: 0;
+    font-size: 1.3rem;
+    color: white;
+    padding: 10px;
+    background: transparent;
+    margin-top: 40px;
+    transition: border-color 0.2s;
+    caret-color: transparent;
+}
+
+::placeholder {
+    color: transparent;
+}
+
+:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 55px;
+    }
+
+.form__label{
+    position: absolute;
+    top: 25px;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #D0FFB7;
+}
+
+
+
 
 
 
