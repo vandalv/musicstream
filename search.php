@@ -28,12 +28,16 @@
     $(".searchInput").val(val);
 </script>
 
-<div class="trackContainerd">
+<div class="trackContainer">
     <ul class="trackList">
         <?php 
-        $songQuery = mysqli_query($dbconnect, "SELECT * FROM songs WHERE title LIKE '%$searchTerm%' LIMIT 10");
+        $songQuery = mysqli_query($dbconnect, "SELECT * FROM songs WHERE title LIKE '$searchTerm' LIMIT 10");
         $songIdArray = array();
         $i = 1;
+        echo "<h1 class='h1Songs'>SONGS</h1>";
+        if(mysqli_num_rows($songQuery) == 0){
+            echo "<h2 class='h2Songs'>No Matches</h2>";
+        }
         while($row = mysqli_fetch_array($songQuery)){
             if($i > 3){
                 break;
