@@ -22,8 +22,47 @@
 
         timer = setTimeout(function(){
             val = $(".searchInput").val();
-            openPage("search.php?searchTetm=" + val);
+            openPage("search.php?searchTerm=" + val);
         }, 2000);
     })
     $(".searchInput").val(val);
 </script>
+
+<div class="trackContainerd">
+    <ul class="trackList">
+        <?php 
+        $songQuery = mysqli_query($dbconnect, "SELECT * FROM songs WHERE title LIKE '$searchTerm%' LIMIT 10");
+        $songIdArray = array();
+        $i = 1;
+        while($row = mysqli_fetch_array($songQuery)){
+            if($i > 3){
+                break;
+            }
+            array_push($songIdArray, $row['id']);
+            $song = new Song($dbconnect, $row['id']);
+            echo "<li class='tracklistRow'>
+                <div class='trackCount'>
+                    <img class='play' src='assets/icons/play-white.png' onclick='setTrack(\"". $song->getId() ."\", tempPlaylist, true)'>
+                    <span class='trackNumber'>$i</span>
+                </div>
+                <div class='trackInfo'>
+                    <span class='tName'>" . $song->getArtist()->getName() . '<br>' . "</span>
+                    <span class='tAlbum'>" . $song->getTitle() . "</span>
+                    <div class='trackOptions'>
+                    <img class='optionBtn' src='assets/icons/more.png'>
+                </div>
+                <div class='trackDuration'>
+                    <span class='duration'>" . $song->getDuration() . "</span>
+                </div>
+                </div>
+                
+                </li>";
+                $i = $i + 1;
+        }
+        ?>
+        <script>
+            tempSongs = '<?php echo json_encode($songIdArray);?>';
+            tempPlaylist = JSON.parse(tempSongs);
+        </script>
+    </ul>
+</div>
