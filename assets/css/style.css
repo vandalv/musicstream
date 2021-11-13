@@ -451,18 +451,12 @@ a{
     background: transparent;
     margin-top: 40px;
     transition: border-color 0.2s;
-    caret-color: transparent;
 }
 
 ::placeholder {
     color: transparent;
 }
 
-:placeholder-shown ~ .form__label {
-    font-size: 1.3rem;
-    cursor: text;
-    top: 55px;
-    }
 
 .form__label{
     position: absolute;
@@ -471,6 +465,15 @@ a{
     transition: 0.2s;
     font-size: 1rem;
     color: #D0FFB7;
+    margin-bottom: 40px;
+}
+
+.searchContainer{
+    padding: 10px;
+}
+
+.pageContent{
+    padding: 20px;
 }
 
 
