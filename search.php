@@ -78,5 +78,19 @@
         if(mysqli_num_rows($artistQuery) == 0){
             echo "<h2 class='h2Songs'>No Matches</h2>";
         }
+        while($row = mysqli_fetch_array($artistQuery)){
+            $artistFound = new Artist($dbconnect, $row['id']);
+        
+        echo "<div class='searchRowResult'>
+                <div class='artistName'>
+                        <span role='link' tabindex='0' onclick='openPage(\"artist.php?id=" . $artistFound->getId() ."\")'>
+                            "
+                            . $artistFound->getName() .
+                            "
+                        </span>
+                </div>
+            </div>";
+        }
+        
     ?>
 </div>

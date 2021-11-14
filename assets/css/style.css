@@ -486,6 +486,17 @@ a{
     color:white;
 }
 
+.searchRowResult{
+    color: white;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    padding-top:8px;
+}
+
+.searchRowResult:hover{
+    background-color: #282828;
+    width: 1130px;
+
 
 
 
