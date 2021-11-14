@@ -22,7 +22,7 @@ $owner = new User($dbconnect, $playlist->getOwner());
             echo $playlist->numberOfSongs();
             ?>
         </p>
-        <button class='button2' onclick="deletePlaylist()">Delete Playlist</button>
+        <button class='button2' onclick="deletePlaylist('<?php echo $idPlaylist;?>')">Delete Playlist</button>
     </div>
 </div>
 <div class="trackContainer">
