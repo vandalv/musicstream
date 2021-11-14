@@ -36,12 +36,13 @@ function playFirstSong(){
     setTrack(tempPlaylist[0], tempPlaylist, true);
 }
 
-function createPlaylist(username){
+function createPlaylist(){
+    console.log(loggedUser);
     var alert = prompt("Enter Playlist Name:");
     if(alert != ""){
-        $.post("includes/handlers/ajax/createPlaylist.php", {name: alert, username:username})
+        $.post("includes/ajax/createPlaylist.php", {name: alert, username:loggedUser})
         .done(function(){
-
+            openPage("musicLibrary.php");
         });
     }
 }
