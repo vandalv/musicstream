@@ -36,6 +36,16 @@ function playFirstSong(){
     setTrack(tempPlaylist[0], tempPlaylist, true);
 }
 
+function createPlaylist(username){
+    var alert = prompt("Enter Playlist Name:");
+    if(alert != ""){
+        $.post("includes/handlers/ajax/createPlaylist.php", {name: alert, username:username})
+        .done(function(){
+
+        });
+    }
+}
+
 function updateTime(audio){
     $(".progressTime.current").text(formatTime(audio.currentTime));
     $(".progressTime.remaining").text(formatTime(audio.duration - audio.currentTime));

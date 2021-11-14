@@ -508,3 +508,7 @@ a{
     padding: 20px;
     text-align: center;
 }
+
+.playlistContainer{
+    padding: 10px 0;
+}
