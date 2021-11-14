@@ -516,3 +516,17 @@ a{
 .itemViewer{
     padding-top: 40px;
 }
+
+.button2{
+    color: #D0FFB7;
+    background-color: transparent;
+    cursor: pointer;
+    /* font-weight: 20; */
+    letter-spacing: 1px;
+    font-size: 12;
+    border: 2px solid #D0FFB7;
+    border-radius: 500px;
+    padding: 6px;
+    min-width: 130px;
+    margin-top: 20px;
+}

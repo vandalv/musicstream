@@ -32,6 +32,16 @@ function formatTime(param){
     return minutes + ":" + zero + seconds;
 }
 
+function deletePlaylist(playlistId){
+    var dp = confirm("Are you sure you want to delete playlist?");
+    if(dp){
+        $.post("includes/ajax/deletePlaylist.php", {playlistId:playlistId})
+        .done(function(){
+            openPage("musicLibrary.php");
+        });
+    }
+}
+
 function playFirstSong(){
     setTrack(tempPlaylist[0], tempPlaylist, true);
 }
