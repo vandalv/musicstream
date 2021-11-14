@@ -28,6 +28,12 @@
     $(".searchInput").val(val);
 </script>
 
+<?php 
+    if($searchTerm == ""){
+        exit();
+    }
+?>
+
 <div class="trackContainer">
     <ul class="trackList">
         <?php 
