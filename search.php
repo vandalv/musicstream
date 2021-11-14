@@ -31,7 +31,7 @@
 <div class="trackContainer">
     <ul class="trackList">
         <?php 
-        $songQuery = mysqli_query($dbconnect, "SELECT * FROM songs WHERE title LIKE '$searchTerm' LIMIT 10");
+        $songQuery = mysqli_query($dbconnect, "SELECT * FROM songs WHERE title LIKE '$searchTerm%' LIMIT 10");
         $songIdArray = array();
         $i = 1;
         echo "<h1 class='h1Songs'>SONGS</h1>";
