@@ -5,13 +5,6 @@
         include("includes/classes/Artist.php");
         include("includes/classes/Album.php");
         include("includes/classes/Song.php");
-        if(isset($_GET['loggedUser'])){
-            $loggedUser = new User($dbconnect, $_GET['loggedUser']);
-        }
-        else{
-            echo "User variable was not set";
-            exit();
-        }
     }
     else{
         include("includes/header.php");

@@ -9,15 +9,18 @@ include("includes/includedFiles.php");
             <button class="button" onclick="createPlaylist()">New Playlist</button>
         </div>
         <?php 
-        $username = $loggedUser->getUsername();
-        $plQuery = mysqli_query($dbconnect, "SELECT * FROM playlists WHERE owner='$username'");
+        $usname = $_SESSION['userLoggedIn'];
+        $plQuery = mysqli_query($dbconnect, "SELECT * FROM playlists WHERE owner='$usname'");
         if(mysqli_num_rows($plQuery) == 0){
-            echo "<h2 class='h2Songs'>No Playlists Exist Yet</h2>";
+            echo "<h2 class='h2Songs'>No Playlists Exist Yet '$usname'</h2>";
         }
         while($row = mysqli_fetch_array($plQuery)){
             echo "<div class='itemViewer'>
+                <div class='plImage'>
+                    <img src='assets/icons/playlist.jpg'>
+                </div>
                 <div class='infoViewer'>                  
-                    {$row['title']}              
+                    {$row['name']}              
                 </div>
             </div>";
         }
