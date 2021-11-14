@@ -70,3 +70,13 @@
         </script>
     </ul>
 </div>
+
+<div class="artistCont">
+    <h1 class='h1Songs'>Artists</h1>
+    <?php 
+        $artistQuery = mysqli_query($dbconnect, "SELECT * FROM artists WHERE name LIKE '$searchTerm%' LIMIT 10");
+        if(mysqli_num_rows($artistQuery) == 0){
+            echo "<h2 class='h2Songs'>No Matches</h2>";
+        }
+    ?>
+</div>
