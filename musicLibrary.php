@@ -15,12 +15,13 @@ include("includes/includedFiles.php");
             echo "<h2 class='h2Songs'>No Playlists Exist Yet '$usname'</h2>";
         }
         while($row = mysqli_fetch_array($plQuery)){
-            echo "<div class='itemViewer'>
+            $playlist = new Playlist($dbconnect, $row);
+            echo "<div class='itemViewer' role='link' tabindex='0' onclick='openPage(\"playlist.php?id=" . $playlist->getId() ."\")'>
                 <div class='plImage'>
                     <img src='assets/icons/playlist.jpg'>
                 </div>
                 <div class='infoViewer'>                  
-                    {$row['name']}              
+                    {$playlist->getName()}              
                 </div>
             </div>";
         }

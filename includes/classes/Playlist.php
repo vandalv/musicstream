@@ -7,11 +7,21 @@ class Playlist{
 
     public function __construct($dbconnect, $data){
         $this->dbconnect = $dbconnect;
-        $this->id = $data;
+        $this->id = $data['id'];
+        $this->name = $data['name'];
+        $this->owner = $data['owner'];
+    }
+
+    public function getId(){
+        return $this->id;
     }
 
     public function getName(){
         return $this->name;
+    }
+
+    public function getOwner(){
+        return $this->owner;
     }
 
 }
