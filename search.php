@@ -94,3 +94,23 @@
         
     ?>
 </div>
+
+<div class="gridContainerd">
+<h1 class='h1Songs'>Albums</h1>
+    <?php 
+        $albumQuery = mysqli_query($dbconnect, "SELECT * FROM albums WHERE title LIKE '$searchTerm%' LIMIT 10");
+        if(mysqli_num_rows($albumQuery) == 0){
+            echo "<h2 class='h2Songs'>No Matches</h2>";
+        }
+        while($row = mysqli_fetch_array($albumQuery)){
+            echo "<div class='itemViewer'>
+            <span role='link' tabindex='0' onclick='openPage(\"album.php?id=" . $row['id'] . "\")'>
+                <img src='{$row['artworkPath']}'>              
+                <div class='infoViewer'>                  
+                    {$row['title']}              
+                </div> 
+            </span>
+            </div>";
+        }
+    ?>
+</div>
