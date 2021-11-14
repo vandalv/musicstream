@@ -512,3 +512,7 @@ a{
 .playlistContainer{
     padding: 10px 0;
 }
+
+.itemViewer{
+    padding-top: 40px;
+}
