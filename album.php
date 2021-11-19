@@ -39,10 +39,10 @@ $album = new Album($dbconnect, $idAlbum);
                 </div>
                 <div class='trackInfo'>
                     <span class='tName'>" . $song->getArtist()->getName() . '<br>' . "</span>
-                    <span class='tAlbum'>" . $song->getTitle() . "</span>
                     <div class='trackOptions'>
                     <img class='optionBtn' src='assets/icons/more.png'>
                 </div>
+                    <span class='tAlbum'>" . $song->getTitle() . "</span>
                 <div class='trackDuration'>
                     <span class='duration'>" . $song->getDuration() . "</span>
                 </div>
@@ -58,3 +58,10 @@ $album = new Album($dbconnect, $idAlbum);
         </script>
     </ul>
 </div>
+
+<nav class="optionsM">
+    <input type="hidden" class="songID">
+    <div class="item">add to playlist</div>
+    <div class="item">item 2</div>
+    <div class="item">item 3</div>
+</nav>
