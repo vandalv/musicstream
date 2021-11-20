@@ -40,7 +40,7 @@ $album = new Album($dbconnect, $idAlbum);
                 <div class='trackInfo'>
                     <span class='tName'>" . $song->getArtist()->getName() . '<br>' . "</span>
                     <div class='trackOptions'>
-                    <img class='optionBtn' src='assets/icons/more.png'>
+                    <img class='optionBtn' src='assets/icons/more.png' onclick='showOptionsMenu(this)'>
                 </div>
                     <span class='tAlbum'>" . $song->getTitle() . "</span>
                 <div class='trackDuration'>
@@ -61,7 +61,7 @@ $album = new Album($dbconnect, $idAlbum);
 
 <nav class="optionsM">
     <input type="hidden" class="songID">
-    <div class="item">add to playlist</div>
-    <div class="item">item 2</div>
-    <div class="item">item 3</div>
+    <div class="itemm">add to playlist</div>
+    <div class="itemm">item 2</div>
+    <div class="itemm">item 3</div>
 </nav>

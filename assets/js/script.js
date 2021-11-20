@@ -9,6 +9,17 @@ var shuffle = false;
 var loggedUser;
 var tempSongs;
 
+$(document).click(function(click) {
+    var target = $(click.target);
+    if(!target.hasClass("itemm") && (!target.hasClass("optionBtn"))){
+        hideOptionsMenu();
+    }
+});
+
+$(window).scroll(function() {
+    hideOptionsMenu();
+});
+
 function openPage(url){
     if(url.indexOf("?") == -1){
         url = url + "?";
@@ -55,6 +66,24 @@ function createPlaylist(){
             openPage("musicLibrary.php");
         });
     }
+}
+
+function hideOptionsMenu(){
+    var menu = $(".optionsM");
+    if(menu.css("display") != "none"){
+        menu.css("display", "none");
+    }
+}
+
+function showOptionsMenu(button){
+    var menu= $(".optionsM");
+    var menuWidth = menu.width();
+    var scrollTop = $(window).scrollTop();
+    var elementOffSet = $(button).offset().top;
+    var top = elementOffSet - scrollTop;
+    var left = $(button).position().left;
+    
+    menu.css({"top": top + "px", "left": left + "px", "display": "inline", "transition": "2s"});
 }
 
 function updateTime(audio){

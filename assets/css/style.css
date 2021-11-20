@@ -535,13 +535,12 @@ a{
     position: fixed;
     background-color: #282828;
     width: 200px;
-    border: 1px solid;
-    border-radius: 3px;
+    border-radius: 6px;
     z-index: 1000;
     display: none;
 }
 
-.optionsM .item{
+.optionsM .itemm{
     font-family: 'roboto';
     width: 100%;
     padding: 12px 20px;
@@ -552,8 +551,9 @@ a{
     height: 40px;
 }
 
-.optionsM .item:hover{
+.optionsM .itemm:hover{
     color:white;
     background-color:#333;
     border-color:#333;
+    border-radius: 6px;
 }
