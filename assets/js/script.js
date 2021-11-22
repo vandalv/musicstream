@@ -23,8 +23,11 @@ $(window).scroll(function() {
 $(document).on("change", "select.playlist", function(){
     var playlistId = $(this).val();
     var songId = $(this).prev(".songId").val();
-    console.log("pId:" + playlistId);
-    console.log("sId:" + songId);
+    $.post("includes/ajax/addToPlaylist.php", {playlistId: playlistId, songId: songId})
+    .done(function(){
+        hideOptionsMenu();
+        $(this).val("");
+    });
 });
 
 function openPage(url){
