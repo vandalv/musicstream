@@ -67,6 +67,14 @@ function playFirstSong(){
     setTrack(tempPlaylist[0], tempPlaylist, true);
 }
 
+function removeFromPlaylist(button, playlistId){
+    var songId = $(button).prevAll(".songId").val();
+    $.post("includes/ajax/removeFromPlaylist.php", {playlistId:playlistId, songId:songId})
+        .done(function(){
+            openPage("playlist.php?id=" + playlistId);
+        });
+}
+
 function createPlaylist(){
     console.log(loggedUser);
     var alert = prompt("Enter Playlist Name:");

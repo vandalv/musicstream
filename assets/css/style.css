@@ -550,6 +550,7 @@ a{
     cursor: pointer;
     height: 40px;
     background-color: #292929;
+    font-size: 12px;
 }
 
 .optionsM .itemm:hover{

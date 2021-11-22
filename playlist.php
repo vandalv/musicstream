@@ -63,4 +63,5 @@ $loggedUs = $_SESSION['userLoggedIn'];
 <nav class="optionsM">
     <input type="hidden" class="songId">
     <?php echo Playlist::getPlaylistsDropdown($dbconnect, $loggedUs);?>
+    <div class="itemm" onclick="removeFromPlaylist(this, '<?php echo $idPlaylist; ?>')">Remove From Playlist</div>
 </nav>
