@@ -549,6 +549,7 @@ a{
     color: rgba(147, 147, 147, 0.8);
     cursor: pointer;
     height: 40px;
+    background-color: #292929;
 }
 
 .optionsM .itemm:hover{
@@ -556,4 +557,14 @@ a{
     background-color:#333;
     border-color:#333;
     border-radius: 6px;
+    font-size: 12px;
 }
+
+.optionsM select{
+    font-size: 12px;
+    border:0px;
+    outline:0px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+

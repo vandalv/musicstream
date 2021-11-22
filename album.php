@@ -8,6 +8,7 @@ else{
 }
 
 $album = new Album($dbconnect, $idAlbum);
+$loggedUs = $_SESSION['userLoggedIn'];
 
 ?>
 <div class="albumInfoHead">
@@ -40,6 +41,7 @@ $album = new Album($dbconnect, $idAlbum);
                 <div class='trackInfo'>
                     <span class='tName'>" . $song->getArtist()->getName() . '<br>' . "</span>
                     <div class='trackOptions'>
+                    <input type='hidden' class='songId' value='" . $albumSong->getId() ."'>
                     <img class='optionBtn' src='assets/icons/more.png' onclick='showOptionsMenu(this)'>
                 </div>
                     <span class='tAlbum'>" . $song->getTitle() . "</span>
@@ -61,7 +63,7 @@ $album = new Album($dbconnect, $idAlbum);
 
 <nav class="optionsM">
     <input type="hidden" class="songID">
-    <div class="itemm">add to playlist</div>
+    <?php echo Playlist::getPlaylistsDropdown($dbconnect, $loggedUs);?>
     <div class="itemm">item 2</div>
     <div class="itemm">item 3</div>
 </nav>
