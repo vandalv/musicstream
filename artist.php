@@ -8,6 +8,7 @@
         echo "No index set";
     }
     $artist = new Artist($dbconnect, $idArtist);
+    $loggedUs = $_SESSION['userLoggedIn'];
 ?>
 
 <div class="albumInfoHead borderBottom">
@@ -39,7 +40,8 @@
                     <span class='tName'>" . $song->getArtist()->getName() . '<br>' . "</span>
                     <span class='tAlbum'>" . $song->getTitle() . "</span>
                     <div class='trackOptions'>
-                    <img class='optionBtn' src='assets/icons/more.png'>
+                    <input type='hidden' class='songId' value='" . $song->getId() ."'>
+                    <img class='optionBtn' src='assets/icons/more.png' onclick='showOptionsMenu(this)'>
                 </div>
                 <div class='trackDuration'>
                     <span class='duration'>" . $song->getDuration() . "</span>
@@ -71,3 +73,7 @@
         }
     ?>
 </div>
+<nav class="optionsM">
+    <input type="hidden" class="songId">
+    <?php echo Playlist::getPlaylistsDropdown($dbconnect, $loggedUs);?>
+</nav>

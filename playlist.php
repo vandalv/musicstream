@@ -9,6 +9,7 @@ else{
 
 $playlist = new Playlist($dbconnect, $idPlaylist);
 $owner = new User($dbconnect, $playlist->getOwner());
+$loggedUs = $_SESSION['userLoggedIn'];
 ?>
 <div class="albumInfoHead">
     <div class="leftSide">
@@ -41,7 +42,8 @@ $owner = new User($dbconnect, $playlist->getOwner());
                     <span class='tName'>" . $song->getArtist()->getName() . '<br>' . "</span>
                     <span class='tAlbum'>" . $song->getTitle() . "</span>
                     <div class='trackOptions'>
-                    <img class='optionBtn' src='assets/icons/more.png'>
+                    <input type='hidden' class='songId' value='" . $song->getId() ."'>
+                    <img class='optionBtn' src='assets/icons/more.png' onclick='showOptionsMenu(this)'>
                 </div>
                 <div class='trackDuration'>
                     <span class='duration'>" . $song->getDuration() . "</span>
@@ -58,3 +60,7 @@ $owner = new User($dbconnect, $playlist->getOwner());
         </script>
     </ul>
 </div>
+<nav class="optionsM">
+    <input type="hidden" class="songId">
+    <?php echo Playlist::getPlaylistsDropdown($dbconnect, $loggedUs);?>
+</nav>
