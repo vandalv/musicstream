@@ -62,7 +62,7 @@ $loggedUs = $_SESSION['userLoggedIn'];
 </div>
 
 <nav class="optionsM">
-    <input type="hidden" class="songID">
+    <input type="hidden" class="songId">
     <?php echo Playlist::getPlaylistsDropdown($dbconnect, $loggedUs);?>
     <div class="itemm">item 2</div>
     <div class="itemm">item 3</div>

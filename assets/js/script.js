@@ -20,6 +20,11 @@ $(window).scroll(function() {
     hideOptionsMenu();
 });
 
+$(document).on("change", "select.playlist", function(){
+    var playlistId = $(this).val();
+    var sondId = $(this).prev(".songId").val();
+});
+
 function openPage(url){
     if(url.indexOf("?") == -1){
         url = url + "?";
