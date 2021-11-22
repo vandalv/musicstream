@@ -41,7 +41,7 @@ $loggedUs = $_SESSION['userLoggedIn'];
                 <div class='trackInfo'>
                     <span class='tName'>" . $song->getArtist()->getName() . '<br>' . "</span>
                     <div class='trackOptions'>
-                    <input type='hidden' class='songId' value='" . $albumSong->getId() ."'>
+                    <input type='hidden' class='songId' value='" . $song->getId() ."'>
                     <img class='optionBtn' src='assets/icons/more.png' onclick='showOptionsMenu(this)'>
                 </div>
                     <span class='tAlbum'>" . $song->getTitle() . "</span>

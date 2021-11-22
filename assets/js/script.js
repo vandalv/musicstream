@@ -22,7 +22,9 @@ $(window).scroll(function() {
 
 $(document).on("change", "select.playlist", function(){
     var playlistId = $(this).val();
-    var sondId = $(this).prev(".songId").val();
+    var songId = $(this).prev(".songId").val();
+    console.log("pId:" + playlistId);
+    console.log("sId:" + songId);
 });
 
 function openPage(url){
@@ -81,8 +83,10 @@ function hideOptionsMenu(){
 }
 
 function showOptionsMenu(button){
+    var songId = $(button).prevAll(".songId").val();
     var menu= $(".optionsM");
     var menuWidth = menu.width();
+    menu.find(".songId").val(songId);
     var scrollTop = $(window).scrollTop();
     var elementOffSet = $(button).offset().top;
     var top = elementOffSet - scrollTop;
