@@ -12,5 +12,9 @@ class User{
         return $this->username;
     }
 
+    public function getFLName(){
+        $q = mysqli_query($this->dbconnect, "SELECT * FROM users WHERE username='$this->username'");
+    }
+
 }
 ?>

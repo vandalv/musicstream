@@ -6,6 +6,10 @@
         include("includes/classes/Album.php");
         include("includes/classes/Song.php");
         include("includes/classes/Playlist.php");
+
+        if(isset($_GET['userLoggedIn'])){
+            $userLoggedIn = new User($dbconnect, $_GET['userLoggedIn']);
+        }
     }
     else{
         include("includes/header.php");
