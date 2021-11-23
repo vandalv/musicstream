@@ -14,4 +14,10 @@
             <h2><?php echo $result; ?></h2>
         </div>
     </div>
+    <div class="buttonItems1">
+    <button class='button2'>User Info</button><br>
+    </div>
+    <div class="buttonItems2">
+    <button class='button2'>Logout</button>
+    </div>
 </div>

@@ -569,3 +569,20 @@ a{
     -moz-appearance: none;
 }
 
+.useInfo h2{
+    padding-top: 40px;
+    color:white;
+    text-align: center;
+}
+
+.buttonItems1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttonItems2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
