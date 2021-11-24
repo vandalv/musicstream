@@ -27,6 +27,6 @@
         <p>
         <input type="password" class="newPwd2" name="newPwd2" placeholder="Confirm Password">
         <br>
-        <button class="button2" onclick="">Update Password</button>
+        <button class="button2" onclick="updatePassword(oldPwd, newPwd1, newPwd2)">Update Password</button>
     </div>
 </div>

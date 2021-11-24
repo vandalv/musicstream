@@ -71,6 +71,20 @@ function updateEmail(email){
     })
 }
 
+function updatePassword(oPWD, nPWD1, nPWD2){
+    var oPWDVal = $("." + oPWD).val();
+    var nPWDVal1 = $("." + nPWD1).val();
+    var nPWDVal2 = $("." + nPWD2).val();
+    $.post("includes/ajax/updatePassword.php", 
+    {oldPWD:oPWDVal, 
+    newPWD1:nPWDVal1,
+    newPWD2:nPWDVal2,  
+    username: loggedUser})
+    .done(function(response){
+        $("." + oPWD).nextAll(".message").text(response);
+    })
+}
+
 function logOut(){
     $.post("includes/ajax/logOut.php", function(){
         location.reload();
