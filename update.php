@@ -3,18 +3,27 @@
 ?>
 
 <?php 
-    $q = mysqli_query($dbconnect, "SELECT concat(firstName, ' ' ,lastName) AS 'full' FROM accounts WHERE username='$userL'");
+    $un = $_SESSION['userLoggedIn'];
+    $q = mysqli_query($dbconnect, "SELECT email FROM accounts WHERE username='$un'");
     $row = mysqli_fetch_array($q);
-    $result = $row['full'];
+    $rst = $row['email'];
     ?>
-    <h2><?php echo $result; ?></h2>
 
 <div class="userInfo">
     <div class="container border">
         <h2>EMAIL</h2>
-        <input type="text" class="email" placeholder="Update e-mail" value="echo $userLoggedIn->getEmail();">
+        <input type="text" class="email" placeholder="Update e-mail" value="<?php echo $rst ?>">
+        <br>
+        <button class="button2" onclick="">Update E-mail</button>
     </div>
     <div class="container">
         <h2>PASSWORD</h2>
+        <input type="password" class="oldPwd" name="oldPwd">
+        <br>
+        <input type="password" class="newPwd1" name="newPwd1">
+        <br>
+        <input type="password" class="newPwd2" name="newPwd2">
+        <br>
+        <button class="button2" onclick="">Update Password</button>
     </div>
 </div>
