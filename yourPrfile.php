@@ -18,6 +18,6 @@
     <button class='button2' onclick="openPage('update.php')">User Info</button><br>
     </div>
     <div class="buttonItems2">
-    <button class='button2'>Logout</button>
+    <button class='button2' onclick="logOut()">Logout</button>
     </div>
 </div>

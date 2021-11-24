@@ -63,6 +63,12 @@ function deletePlaylist(playlistId){
     }
 }
 
+function logOut(){
+    $.post("includes/ajax/logOut.php"), function(){
+        location.reload();
+    }
+}
+
 function playFirstSong(){
     setTrack(tempPlaylist[0], tempPlaylist, true);
 }
