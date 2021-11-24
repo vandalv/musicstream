@@ -1,0 +1,8 @@
+<?php 
+    include("../config.php");
+    if(!isset($_POST['username'])){
+        echo "ERROR: NO USER SET";
+        exit();
+    }
+    
+?>
