@@ -64,9 +64,9 @@ function deletePlaylist(playlistId){
 }
 
 function logOut(){
-    $.post("includes/ajax/logOut.php"), function(){
+    $.post("includes/ajax/logOut.php", function(){
         location.reload();
-    }
+    });
 }
 
 function playFirstSong(){
