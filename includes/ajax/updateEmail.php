@@ -12,7 +12,8 @@
             echo "Email Is Already In Use";
             exit();
         }
-        if (preg_match("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$", $email)){
+        preg_match("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$^", $email, $matches);
+        if ($matches){
             $q = mysqli_query($dbconnect, "UPDATE accounts SET email = '$email' WHERE username = '$username'");
             echo "Update Was Sucessfull";
         }
