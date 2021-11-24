@@ -10,19 +10,21 @@
     ?>
 
 <div class="userInfo">
-    <div class="container border">
+    <div class="container">
         <h2>EMAIL</h2>
         <input type="text" class="email" placeholder="Update e-mail" value="<?php echo $rst ?>">
         <br>
+        <span class=message></span>
+        <p>
         <button class="button2" onclick="">Update E-mail</button>
     </div>
     <div class="container">
         <h2>PASSWORD</h2>
-        <input type="password" class="oldPwd" name="oldPwd">
-        <br>
-        <input type="password" class="newPwd1" name="newPwd1">
-        <br>
-        <input type="password" class="newPwd2" name="newPwd2">
+        <input type="password" class="oldPwd" name="oldPwd" placeholder="Old Password">
+        <p>
+        <input type="password" class="newPwd1" name="newPwd1" placeholder="New Password">
+        <p>
+        <input type="password" class="newPwd2" name="newPwd2" placeholder="Confirm Password">
         <br>
         <button class="button2" onclick="">Update Password</button>
     </div>

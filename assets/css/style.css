@@ -586,3 +586,54 @@ a{
     align-items: center;
 }
 
+input::-webkit-input-placeholder {
+    color:  #888;
+}
+
+.userInfo h2{
+    color:white;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.container .email{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container .button2{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+}
+
+.container .oldPwd{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container .newPwd1{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container .newPwd2{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.userInfo{
+    margin-top: 40px;
+}
+
+.message{
+    margin-left: 44%;
+    color: #D0FFB7;
+    font-size: 11px;
+}
+
