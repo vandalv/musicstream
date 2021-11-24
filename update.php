@@ -19,7 +19,7 @@
         <p>
         <button class="button2" onclick="updateEmail('email')">Update E-mail</button>
     </div>
-    <div class="container">
+    <div class="container"> 
         <h2>PASSWORD</h2>
         <input type="password" class="oldPwd" name="oldPwd" placeholder="Old Password">
         <p>
@@ -27,6 +27,8 @@
         <p>
         <input type="password" class="newPwd2" name="newPwd2" placeholder="Confirm Password">
         <br>
-        <button class="button2" onclick="updatePassword(oldPwd, newPwd1, newPwd2)">Update Password</button>
+        <span class=message></span>
+        <p>
+        <button class="button2" onclick="updatePassword('oldPwd', 'newPwd1', 'newPwd2')">Update Password</button>
     </div>
 </div>
