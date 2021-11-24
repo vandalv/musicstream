@@ -12,11 +12,11 @@
 <div class="userInfo">
     <div class="container">
         <h2>EMAIL</h2>
-        <input type="text" class="email" placeholder="Update e-mail" value="<?php echo $rst ?>" onclick="updateEmail('email')">
+        <input type="text" class="email" placeholder="Update e-mail" value="<?php echo $rst ?>">
         <br>
         <span class=message></span>
         <p>
-        <button class="button2" onclick="">Update E-mail</button>
+        <button class="button2" onclick="updateEmail('email')">Update E-mail</button>
     </div>
     <div class="container">
         <h2>PASSWORD</h2>

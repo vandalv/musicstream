@@ -67,7 +67,7 @@ function updateEmail(email){
     var emailVal = $("." + email).val();
     $.post("includes/ajax/updateEmail.php", {email:emailVal, username: loggedUser})
     .done(function(response){
-        $("." + email).nextUntill(".message").text(response);
+        $("." + email).nextAll(".message").text(response);
     })
 }
 
