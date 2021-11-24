@@ -12,7 +12,7 @@
 <div class="userInfo">
     <div class="container">
         <h2>EMAIL</h2>
-        <input type="text" class="email" placeholder="Update e-mail" value="<?php echo $rst ?>">
+        <input type="text" class="email" placeholder="Update e-mail" value="<?php echo $rst ?>" onclick="updateEmail('email')">
         <br>
         <span class=message></span>
         <p>
